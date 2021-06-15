@@ -24,8 +24,6 @@ options.add_argument('--start-maximized')
 driver = webdriver.Chrome(r'C:\chromedriver.exe', options = options)
 driver.get('https://amazon.es/')
 
-action = ActionChains(driver)
-
 WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, '//*[@id="sp-cc-accept"]')))
 acpt_cookies = driver.find_element_by_xpath('//*[@id="sp-cc-accept"]').click()
 
